@@ -16,7 +16,7 @@
 			<?php
 				session_start();
 				if (@$_SESSION['Usuario']) 
-					header("Location:alumno.php");
+					header("Location:coordinador.php");
 				//Código aleatorio para evitar CSRF
 				$_SESSION['csrf'] = md5(uniqid(mt_rand(),true));
 			?>
@@ -28,7 +28,7 @@
 					<!-- --------------------------------- HEADER ------------------------------------ -->
 					<div id="head" class="row">
 						<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6">
-							<img src="Pumito.png" class="img-responsive center-block" width="250px" />
+							<img src="Imagenes/Pumito.png" class="img-responsive center-block" width="250px" />
 						</div>
 						<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6">
 							<h1>Sapiencia</h1>
@@ -51,7 +51,7 @@
 								</div>
 								<div class="navbar-collapse collapse sidebar-navbar-collapse color" id = "nav">
 									<ul class="nav nav-stacked nav-pills"><br/>
-										<li><a href="Incio.php">Alumno</a></li><br/>
+										<li><a href="Inicio.php">Alumno</a></li><br/>
 										<li><a href="InicioProf.php">Profesor</a></li><br/>
 										<li class = "active"><a href="InicioCoord.php">Coordinador</a></li><br/>
 										<li><a href="InicioAdmin.php">Administrador</a></li><br/>
@@ -62,7 +62,7 @@
 					</div>
 					<div class="col-xs-pull-4 col-xs-8 thumbnail" >
 						<!-- --------------------------- Login ------------------------------ -->
-						<form action = "Proceso.php" method = "POST" id = "Botones">
+						<form action = "Procesocoord.php" method = "POST" id = "Botones">
 							<h2 class="text-center">Bienvenidos</h2> 
 							<div class="form-group">
 								<label for="user">Usuario:</label>

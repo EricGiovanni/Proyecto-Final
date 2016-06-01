@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if (!@$_SESSION['Usuario']) 
-		header("Location:Inicio.php");
+		header("Location:InicioAdmin.php");
 	$user=$_SESSION['Nombre'];
 	$mipuntaje=80;
 	$puntajemax=20;
@@ -37,39 +37,23 @@ echo '<html>
 				<div class="row">
 				
 						<div class="col-xs-4 col-sm-4  col-md-4 col-lg-4">
-							<form action = "editar.php" method = "POST">
+							<form action = "Editarprof.php" method = "POST">
 								<input type = "submit" class="btn btn-default btn-lg btn-block" value = "Editar perfil" name = "editar"/>
 							</form>
-							<div class="thumbnail datos">
-								<h3 class="text-center">Puntuacion</h3>
-								Mejor Puntuacion: <br/>
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:'.$mipuntaje.'%"> </div>
-								</div>
-								Mi Puntuacion:
-								<div class="progress">
-									<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:'.$puntajemax.'%"> </div>
-								</div>
-							</div>
-							<div class="thumbnail datos">
-								<h3 class="text-center">Temas que debes repasar</h3>
-								<ul class="list-unstyled">';
-									foreach ($repaso as $elem)
-									{
-										echo '<li>'.$elem.'</li>';
-									}
-								echo '</ul>
-							</div>
+							<form action = "agregar.php" method = "POST">
+								<input type = "submit" class="btn btn-default btn-lg btn-block" value = "Agregar preguntas" name = "editar"/>
+							</form>
+							<form action = "Alumpunts.php" method = "POST">
+								<input type = "submit" class="btn btn-default btn-lg btn-block" value = "Puntajes de alumnos" name = "editar"/>
+							</form>
 							<form action = "cerrar.php">
 								<input type = "submit" class="btn btn-default btn-lg btn-block" value = "Cerrar Sesión" name = "close"/>
 							</form>
 						</div>	
 						<div class="col-xs-8 col-sm-8  col-md-8 col-lg-8 thumbnail" >
-							<form action = "jugadores.php" method = "POST">
-								<input type = "submit" class="btn btn-warning btn-lg btn-block" value = "Iniciar juego" name = "begin"/>
-							</form>
 							<img src="Imagenes/Logo.png" class="img-responsive center-block" width="700px" />
-						</div>		
+						</div>	
+							
 				</div>
 		</div>
 		

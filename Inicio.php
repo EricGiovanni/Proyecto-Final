@@ -28,7 +28,7 @@
 					<!-- --------------------------------- HEADER ------------------------------------ -->
 					<div id="head" class="row">
 						<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6">
-							<img src="Pumito.png" class="img-responsive center-block" width="250px" />
+							<img src="Imagenes/Pumito.png" class="img-responsive center-block" width="250px" />
 						</div>
 						<div class="col-xs-6 col-sm-6  col-md-6 col-lg-6">
 							<h1>Sapiencia</h1>
@@ -90,3 +90,30 @@
 		</div>	
 	</body>
 </html>
+<?php
+ function contador()
+    {
+        $archivo = "contador.txt"; //el archivo que contiene en numero
+        $f = fopen($archivo, "r"); //abrimos el archivo en modo de lectura
+        if($f)
+        {
+            $contador = fread($f, filesize($archivo)); //leemos el archivo
+            $contador = $contador + 1; //sumamos +1 al contador
+            fclose($f);
+        }
+        $f = fopen($archivo, "w+");
+        if($f)
+        {
+            fwrite($f,$contador);
+            fclose($f);
+        }
+        return $contador;
+    }
+	echo '<nav class="navbar navbar-inverse" role="navigation">
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#"><h4 style = "color:white;">'.contador().'</h4></a></li>
+				</ul>
+			</div>
+		  </nav>';
+?>
